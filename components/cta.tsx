@@ -38,7 +38,7 @@ export default function Cta() {
                 className="btn w-full mt-4 sm:mt-0 bg-transparent text-white border border-gray-600 hover:bg-white hover:text-gray-900 hover:border-white sm:w-auto rounded-md py-3 px-8 font-medium transition-all"
                 href="https://wa.me/549XXXXXXXXX" 
               >
-                WhatsApp Directo
+                WhatsApp
               </a>
             </div>
 

@@ -7,12 +7,12 @@ export default function LargeTestimonial() {
       <div className="mx-auto max-w-4xl px-4 sm:px-6">
         <div className="text-center">
           
-          {/* Foto del cliente (Centrada y limpia) */}
+          {/* Foto del cliente */}
+          {/* ... (Tu código de imagen aquí si lo tienes separado, o el div que ya tenías) ... */}
           
-
-          {/* EL TEXTO CON CONTRASTE (Lo que pediste) */}
           <blockquote className="max-w-3xl mx-auto">
-            <p className="text-3xl md:text-4xl text-gray-500 font-light leading-snug tracking-tight">
+            {/* CAMBIO AQUI: text-xl (móvil) sm:text-2xl (tablet) md:text-4xl (PC) */}
+            <p className="text-xl sm:text-2xl md:text-4xl text-gray-500 font-light leading-snug tracking-tight">
               "Trabajar con un ingeniero civil profesional <br className="hidden md:block" />
               <span className="text-gray-900 font-bold">marcó la diferencia</span>. Desde el 
               cálculo estructural hasta la <span className="text-gray-900 font-bold decoration-[#ff914d] decoration-4 underline-offset-4 underline">dirección de obra</span>, 

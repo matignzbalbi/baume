@@ -6,14 +6,16 @@ export default function Footer({ border = false }: { border?: boolean }) {
     <footer>
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div
-          className={`grid grid-cols-2 gap-8 py-8 sm:grid-cols-12 md:py-12 text-center md:text-left ${
+          // CAMBIO 1: 'text-center' para centrar textos globalmente
+          className={`grid grid-cols-1 gap-8 py-8 sm:grid-cols-12 md:py-12 text-center ${
             border
               ? "border-t [border-image:linear-gradient(to_right,transparent,var(--color-slate-200),transparent)1]"
               : ""
           }`}
         >
           {/* 1st block: Logo y Copyright */}
-          <div className="col-span-2 sm:col-span-12 lg:col-span-4 flex flex-col items-center md:items-start space-y-2">
+          {/* CAMBIO 2: 'items-center' para centrar el logo y textos verticalmente */}
+          <div className="col-span-1 sm:col-span-12 lg:col-span-4 flex flex-col items-center space-y-2">
             <div>
               <Logo />
             </div>
@@ -25,7 +27,9 @@ export default function Footer({ border = false }: { border?: boolean }) {
 
           {/* 2nd block: Menú */}
           <div className="col-span-1 sm:col-span-6 md:col-span-3 lg:col-span-2 space-y-2">
-            <h3 className="text-sm font-medium text-gray-900">Menú</h3>
+            <h3 className="text-base font-bold tracking-tight text-gray-900">
+              Menú
+            </h3>
             <ul className="space-y-2 text-sm">
               <li>
                 <Link
@@ -56,7 +60,9 @@ export default function Footer({ border = false }: { border?: boolean }) {
 
           {/* 3rd block: Contacto */}
           <div className="col-span-1 sm:col-span-6 md:col-span-3 lg:col-span-3 space-y-2">
-            <h3 className="text-sm font-medium text-gray-900">Contacto</h3>
+            <h3 className="text-base font-bold tracking-tight text-gray-900">
+              Contacto
+            </h3>
             <ul className="space-y-2 text-sm">
               <li>
                 <a
@@ -70,7 +76,7 @@ export default function Footer({ border = false }: { border?: boolean }) {
               </li>
               <li>
                 <a
-                  className="text-gray-600 transition hover:text-orange-500"
+                  className="text-gray-600 transition hover:text-orange-500 break-all"
                   href="mailto:contacto@jbaume.com"
                 >
                   construcciones@jbaume.com.ar
@@ -83,10 +89,13 @@ export default function Footer({ border = false }: { border?: boolean }) {
           </div>
 
           {/* 4th block: Redes Sociales */}
-          <div className="col-span-2 sm:col-span-6 md:col-span-3 lg:col-span-3 space-y-2">
-            <h3 className="text-sm font-medium text-gray-900">Nuestras redes</h3>
-            <ul className="flex justify-center md:justify-start gap-4">
-              {/* Instagram (Versión limpia/geométrica) */}
+          <div className="col-span-1 sm:col-span-6 md:col-span-3 lg:col-span-3 space-y-2">
+            <h3 className="text-base font-bold tracking-tight text-gray-900">
+              Nuestras redes
+            </h3>
+            {/* CAMBIO 3: 'justify-center' para centrar los íconos */}
+            <ul className="flex justify-center gap-4">
+              {/* Instagram */}
               <li>
                 <Link
                   className="flex items-center justify-center text-orange-500 transition hover:text-orange-600"
@@ -103,7 +112,7 @@ export default function Footer({ border = false }: { border?: boolean }) {
                 </Link>
               </li>
 
-              {/* LinkedIn (Versión caja sólida estándar) */}
+              {/* LinkedIn */}
               <li>
                 <Link
                   className="flex items-center justify-center text-orange-500 transition hover:text-orange-600"
