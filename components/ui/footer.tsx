@@ -5,208 +5,122 @@ export default function Footer({ border = false }: { border?: boolean }) {
   return (
     <footer>
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        {/* Top area: Blocks */}
         <div
-          className={`grid gap-10 py-8 sm:grid-cols-12 md:py-12 ${border ? "border-t [border-image:linear-gradient(to_right,transparent,var(--color-slate-200),transparent)1]" : ""}`}
+          className={`grid grid-cols-2 gap-8 py-8 sm:grid-cols-12 md:py-12 text-center md:text-left ${
+            border
+              ? "border-t [border-image:linear-gradient(to_right,transparent,var(--color-slate-200),transparent)1]"
+              : ""
+          }`}
         >
-          {/* 1st block */}
-          <div className="space-y-2 sm:col-span-12 lg:col-span-4">
+          {/* 1st block: Logo y Copyright */}
+          <div className="col-span-2 sm:col-span-12 lg:col-span-4 flex flex-col items-center md:items-start space-y-2">
             <div>
               <Logo />
             </div>
             <div className="text-sm text-gray-600">
-              &copy; Cruip.com - All rights reserved.
+              &copy; {new Date().getFullYear()} J. Baume Construcciones. <br />
+              Todos los derechos reservados.
             </div>
           </div>
 
-          {/* 2nd block */}
-          <div className="space-y-2 sm:col-span-6 md:col-span-3 lg:col-span-2">
-            <h3 className="text-sm font-medium">Product</h3>
+          {/* 2nd block: Menú */}
+          <div className="col-span-1 sm:col-span-6 md:col-span-3 lg:col-span-2 space-y-2">
+            <h3 className="text-sm font-medium text-gray-900">Menú</h3>
             <ul className="space-y-2 text-sm">
               <li>
                 <Link
-                  className="text-gray-600 transition hover:text-gray-900"
-                  href="#0"
+                  className="text-gray-600 transition hover:text-orange-500"
+                  href="/"
                 >
-                  Features
+                  Inicio
                 </Link>
               </li>
               <li>
                 <Link
-                  className="text-gray-600 transition hover:text-gray-900"
-                  href="#0"
+                  className="text-gray-600 transition hover:text-orange-500"
+                  href="#services"
                 >
-                  Integrations
+                  Servicios
                 </Link>
               </li>
               <li>
                 <Link
-                  className="text-gray-600 transition hover:text-gray-900"
-                  href="#0"
+                  className="text-gray-600 transition hover:text-orange-500"
+                  href="#contact"
                 >
-                  Pricing & Plans
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className="text-gray-600 transition hover:text-gray-900"
-                  href="#0"
-                >
-                  Changelog
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className="text-gray-600 transition hover:text-gray-900"
-                  href="#0"
-                >
-                  Our method
+                  Presupuesto
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* 3rd block */}
-          <div className="space-y-2 sm:col-span-6 md:col-span-3 lg:col-span-2">
-            <h3 className="text-sm font-medium">Company</h3>
+          {/* 3rd block: Contacto */}
+          <div className="col-span-1 sm:col-span-6 md:col-span-3 lg:col-span-3 space-y-2">
+            <h3 className="text-sm font-medium text-gray-900">Contacto</h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link
-                  className="text-gray-600 transition hover:text-gray-900"
-                  href="#0"
+                <a
+                  className="text-gray-600 transition hover:text-orange-500"
+                  href="https://wa.me/5491100000000"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
-                  About us
-                </Link>
+                  +54 9 11 XXX
+                </a>
               </li>
               <li>
-                <Link
-                  className="text-gray-600 transition hover:text-gray-900"
-                  href="#0"
+                <a
+                  className="text-gray-600 transition hover:text-orange-500"
+                  href="mailto:contacto@jbaume.com"
                 >
-                  Diversity & Inclusion
-                </Link>
+                  construcciones@jbaume.com.ar
+                </a>
               </li>
-              <li>
-                <Link
-                  className="text-gray-600 transition hover:text-gray-900"
-                  href="#0"
-                >
-                  Blog
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className="text-gray-600 transition hover:text-gray-900"
-                  href="#0"
-                >
-                  Careers
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className="text-gray-600 transition hover:text-gray-900"
-                  href="#0"
-                >
-                  Financial statements
-                </Link>
+              <li className="text-gray-600">
+                Luján, Buenos Aires.
               </li>
             </ul>
           </div>
 
-          {/* 4th block */}
-          <div className="space-y-2 sm:col-span-6 md:col-span-3 lg:col-span-2">
-            <h3 className="text-sm font-medium">Resources</h3>
-            <ul className="space-y-2 text-sm">
+          {/* 4th block: Redes Sociales */}
+          <div className="col-span-2 sm:col-span-6 md:col-span-3 lg:col-span-3 space-y-2">
+            <h3 className="text-sm font-medium text-gray-900">Nuestras redes</h3>
+            <ul className="flex justify-center md:justify-start gap-4">
+              {/* Instagram (Versión limpia/geométrica) */}
               <li>
                 <Link
-                  className="text-gray-600 transition hover:text-gray-900"
+                  className="flex items-center justify-center text-orange-500 transition hover:text-orange-600"
                   href="#0"
-                >
-                  Community
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className="text-gray-600 transition hover:text-gray-900"
-                  href="#0"
-                >
-                  Terms of service
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className="text-gray-600 transition hover:text-gray-900"
-                  href="#0"
-                >
-                  Report a vulnerability
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* 5th block */}
-          <div className="space-y-2 sm:col-span-6 md:col-span-3 lg:col-span-2">
-            <h3 className="text-sm font-medium">Social</h3>
-            <ul className="flex gap-1">
-              <li>
-                <Link
-                  className="flex items-center justify-center text-blue-500 transition hover:text-blue-600"
-                  href="#0"
-                  aria-label="Twitter"
+                  aria-label="Instagram"
                 >
                   <svg
                     className="h-8 w-8 fill-current"
-                    viewBox="0 0 32 32"
+                    viewBox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg"
                   >
-                    <path d="m13.063 9 3.495 4.475L20.601 9h2.454l-5.359 5.931L24 23h-4.938l-3.866-4.893L10.771 23H8.316l5.735-6.342L8 9h5.063Zm-.74 1.347h-1.457l8.875 11.232h1.36l-8.778-11.232Z"></path>
+                    <path d="M7.8,2H16.2C19.4,2 22,4.6 22,7.8V16.2A5.8,5.8 0 0,1 16.2,22H7.8C4.6,22 2,19.4 2,16.2V7.8A5.8,5.8 0 0,1 7.8,2M7.6,4A3.6,3.6 0 0,0 4,7.6V16.4C4,18.39 5.61,20 7.6,20H16.4A3.6,3.6 0 0,0 20,16.4V7.6C20,5.61 18.39,4 16.4,4H7.6M17.25,5.5A1.25,1.25 0 0,1 18.5,6.75A1.25,1.25 0 0,1 17.25,8A1.25,1.25 0 0,1 16,6.75A1.25,1.25 0 0,1 17.25,5.5M12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9Z" />
                   </svg>
                 </Link>
               </li>
+
+              {/* LinkedIn (Versión caja sólida estándar) */}
               <li>
                 <Link
-                  className="flex items-center justify-center text-blue-500 transition hover:text-blue-600"
+                  className="flex items-center justify-center text-orange-500 transition hover:text-orange-600"
                   href="#0"
-                  aria-label="Medium"
+                  aria-label="LinkedIn"
                 >
                   <svg
                     className="h-8 w-8 fill-current"
-                    viewBox="0 0 32 32"
+                    viewBox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg"
                   >
-                    <path d="M23 8H9a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V9a1 1 0 0 0-1-1Zm-1.708 3.791-.858.823a.251.251 0 0 0-.1.241V18.9a.251.251 0 0 0 .1.241l.838.823v.181h-4.215v-.181l.868-.843c.085-.085.085-.11.085-.241v-4.887l-2.41 6.131h-.329l-2.81-6.13V18.1a.567.567 0 0 0 .156.472l1.129 1.37v.181h-3.2v-.181l1.129-1.37a.547.547 0 0 0 .146-.472v-4.749a.416.416 0 0 0-.138-.351l-1-1.209v-.181H13.8l2.4 5.283 2.122-5.283h2.971l-.001.181Z"></path>
-                  </svg>
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className="flex items-center justify-center text-blue-500 transition hover:text-blue-600"
-                  href="#0"
-                  aria-label="Github"
-                >
-                  <svg
-                    className="h-8 w-8 fill-current"
-                    viewBox="0 0 32 32"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path d="M16 8.2c-4.4 0-8 3.6-8 8 0 3.5 2.3 6.5 5.5 7.6.4.1.5-.2.5-.4V22c-2.2.5-2.7-1-2.7-1-.4-.9-.9-1.2-.9-1.2-.7-.5.1-.5.1-.5.8.1 1.2.8 1.2.8.7 1.3 1.9.9 2.3.7.1-.5.3-.9.5-1.1-1.8-.2-3.6-.9-3.6-4 0-.9.3-1.6.8-2.1-.1-.2-.4-1 .1-2.1 0 0 .7-.2 2.2.8.6-.2 1.3-.3 2-.3s1.4.1 2 .3c1.5-1 2.2-.8 2.2-.8.4 1.1.2 1.9.1 2.1.5.6.8 1.3.8 2.1 0 3.1-1.9 3.7-3.7 3.9.3.4.6.9.6 1.6v2.2c0 .2.1.5.6.4 3.2-1.1 5.5-4.1 5.5-7.6-.1-4.4-3.7-8-8.1-8z"></path>
+                    <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z" />
                   </svg>
                 </Link>
               </li>
             </ul>
           </div>
-        </div>
-      </div>
-
-      {/* Big text */}
-      <div className="relative -mt-16 h-60 w-full" aria-hidden="true">
-        <div className="pointer-events-none absolute left-1/2 -z-10 -translate-x-1/2 text-center text-[348px] font-bold leading-none before:bg-linear-to-b before:from-gray-200 before:to-gray-100/30 before:to-80% before:bg-clip-text before:text-transparent before:content-['Simple'] after:absolute after:inset-0 after:bg-gray-300/70 after:bg-clip-text after:text-transparent after:mix-blend-darken after:content-['Simple'] after:[text-shadow:0_1px_0_white]"></div>
-        {/* Glow */}
-        <div
-          className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-2/3"
-          aria-hidden="true"
-        >
-          <div className="h-56 w-56 rounded-full border-[20px] border-blue-700 blur-[80px]"></div>
         </div>
       </div>
     </footer>

@@ -1,51 +1,50 @@
-import Image from "next/image";
-import Stripes from "@/public/images/stripes-dark.svg";
-
 export default function Cta() {
   return (
-    <section>
-      <div className="mx-auto max-w-6xl px-4 sm:px-6">
+    // CAMBIO CLAVE:
+    // 1. 'pt-0': Eliminamos el relleno superior interno.
+    // 2. '-mt-12 md:-mt-24': Forzamos a la sección a subir 96px (aprox) sobre el espacio vacío anterior.
+    // 3. 'relative z-20': Aseguramos que quede por encima de la foto de fondo si se superpone.
+    <section id="contact" className="relative z-20 pt-25 pb-12 md:pb-50 -mt-12 md:-mt-24">
+      <div className="mx-auto max-w-4xl px-4 sm:px-6">
         <div
-          className="relative overflow-hidden rounded-2xl text-center shadow-xl before:pointer-events-none before:absolute before:inset-0 before:-z-10 before:rounded-2xl before:bg-gray-900"
+          className="relative overflow-hidden rounded-2xl bg-[lab(8.11897%_0.811279_-12.254)] px-8 py-10 text-center shadow-2xl md:px-12 md:py-16"
           data-aos="zoom-y-out"
         >
-          {/* Glow */}
-          <div
-            className="absolute bottom-0 left-1/2 -z-10 -translate-x-1/2 translate-y-1/2"
-            aria-hidden="true"
-          >
-            <div className="h-56 w-[480px] rounded-full border-[20px] border-blue-500 blur-3xl" />
-          </div>
-          {/* Stripes illustration */}
-          <div
-            className="pointer-events-none absolute left-1/2 top-0 -z-10 -translate-x-1/2 transform"
-            aria-hidden="true"
-          >
-            <Image
-              className="max-w-none"
-              src={Stripes}
-              width={768}
-              height={432}
-              alt="Stripes"
-            />
-          </div>
-          <div className="px-4 py-12 md:px-12 md:py-20">
-            <h2 className="mb-6 border-y text-3xl font-bold text-gray-200 [border-image:linear-gradient(to_right,transparent,--theme(--color-slate-700/.7),transparent)1] md:mb-12 md:text-4xl">
-              Create your next project with Simple
+          {/* Barra de acento naranja superior */}
+          <div className="absolute top-0 left-0 h-1.5 w-full bg-[#ff914d]" />
+
+          <div className="relative z-10">
+            {/* Título en Blanco */}
+            <h2 className="mb-6 text-3xl font-bold text-white md:text-4xl">
+              ¿Listo para comenzar tu proyecto?
             </h2>
-            <div className="mx-auto max-w-xs sm:flex sm:max-w-none sm:justify-center">
+            
+            {/* Texto descriptivo */}
+            <p className="mx-auto mb-8 max-w-2xl text-lg text-gray-300">
+              Consultá con un ingeniero civil matriculado. Asesoramiento técnico profesional para cálculo estructural, suelos y obras industriales.
+            </p>
+
+            <div className="mx-auto max-w-xs sm:flex sm:max-w-none sm:justify-center gap-4">
+              {/* Botón Principal */}
               <a
-                className="btn group mb-4 w-full bg-linear-to-t from-blue-600 to-blue-500 bg-[length:100%_100%] bg-[bottom] text-white shadow-sm hover:bg-[length:100%_150%] sm:mb-0 sm:w-auto"
-                href="#0"
+                className="btn w-full bg-[#ff914d] text-white hover:bg-[#e67a3a] border border-transparent shadow-sm transition-colors sm:w-auto rounded-md py-3 px-8 font-medium"
+                href="mailto:contacto@jbaume.com" 
               >
-                <span className="relative inline-flex items-center">
-                  Start Free Trial{" "}
-                  <span className="ml-1 tracking-normal text-blue-300 transition-transform group-hover:translate-x-0.5">
-                    -&gt;
-                  </span>
-                </span>
+                Solicitar Presupuesto
+              </a>
+              
+              {/* Botón Secundario */}
+              <a
+                className="btn w-full mt-4 sm:mt-0 bg-transparent text-white border border-gray-600 hover:bg-white hover:text-gray-900 hover:border-white sm:w-auto rounded-md py-3 px-8 font-medium transition-all"
+                href="https://wa.me/549XXXXXXXXX" 
+              >
+                WhatsApp Directo
               </a>
             </div>
+
+            <p className="mt-8 text-sm text-gray-400">
+              Atendemos en Luján, CABA, Zona Norte y Zona Oeste.
+            </p>
           </div>
         </div>
       </div>

@@ -4,13 +4,19 @@
 @import './additional-styles/utility-patterns.css' layer(components);
 @import './additional-styles/theme.css';
 
-@plugin "@tailwindcss/forms" {
-  strategy: base;
-}
+/* Tailwind CSS customization moved to tailwind.config.js */
 
-@theme {
-  --font-inter: Inter, sans-serif;
-  --font-mono: Roboto Mono, monospace;
+:root {
+  --color-orange-50: #fff7ed;
+  --color-orange-100: #ffedd5;
+  --color-orange-200: #fed7aa;
+  --color-orange-300: #fdba74;
+  --color-orange-400: #fb923c;
+  --color-orange-500: #ff914d;
+  --color-orange-600: #e67a3a;
+  --color-orange-700: #c2410c;
+  --color-orange-800: #9a3412;
+  --color-orange-900: #7c2d12;
 
   --text-xs: 0.75rem;
   --text-xs--line-height: 1.5;
@@ -53,140 +59,189 @@
   --animate-breath: breath;
   --animate-float: float;
   --animate-line: line;
-  --animate-infinite-scroll: infinite-scroll;  
+  --animate-infinite-scroll: infinite-scroll;
+  --animate-slide-in: slide-in;
+}
 
   @keyframes code-1 {
     0% {
       opacity: 0;
     }
+
     2.5% {
       opacity: 1;
     }
+
     97.5% {
       opacity: 1;
     }
+
     100% {
       opacity: 0;
     }
   }
+
   @keyframes code-2 {
     16.2% {
       opacity: 0;
     }
+
     18.75% {
       opacity: 1;
     }
+
     97.5% {
       opacity: 1;
     }
+
     100% {
       opacity: 0;
     }
   }
+
   @keyframes code-3 {
     32.5% {
       opacity: 0;
     }
+
     35% {
       opacity: 1;
     }
+
     97.5% {
       opacity: 1;
     }
+
     100% {
       opacity: 0;
     }
   }
+
   @keyframes code-4 {
     48.75% {
       opacity: 0;
     }
+
     51.25% {
       opacity: 1;
     }
+
     97.5% {
       opacity: 1;
     }
+
     100% {
       opacity: 0;
     }
   }
+
   @keyframes code-5 {
     65% {
       opacity: 0;
     }
+
     72.5% {
       opacity: 1;
     }
+
     97.5% {
       opacity: 1;
     }
+
     100% {
       opacity: 0;
     }
   }
+
   @keyframes code-6 {
     81.25% {
       opacity: 0;
     }
+
     83.75% {
       opacity: 1;
     }
+
     97.5% {
       opacity: 1;
     }
+
     100% {
       opacity: 0;
     }
   }
+
   @keyframes breath {
+
     0%,
     100% {
       transform: scale(0.95);
     }
+
     50% {
       transform: scale(1.1);
     }
   }
+
   @keyframes float {
+
     0%,
     100% {
       transform: translateY(0);
     }
+
     50% {
       transform: translateY(-5%);
     }
   }
+
   @keyframes line {
+
     0%,
     100% {
       left: 0;
       opacity: 0;
     }
+
     50% {
       left: 100%;
       transform: translateX(-100%);
     }
+
     10%,
     40%,
     60%,
     90% {
       opacity: 0;
     }
+
     25%,
     75% {
       opacity: 1;
     }
   }
+
   @keyframes infinite-scroll {
     from {
       transform: translateX(0);
     }
+
     to {
       transform: translateX(-100%);
     }
   }
-}
+
+  @keyframes slide-in {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 
 /*
   The default border color has changed to `currentColor` in Tailwind CSS v4,
@@ -197,6 +252,7 @@
   color utility to any element that depends on these defaults.
 */
 @layer base {
+
   *,
   ::after,
   ::before,
