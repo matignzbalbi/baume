@@ -1,4 +1,4 @@
-"use client"; // IMPORTANTE: Esto habilita la interactividad
+"use client";
 
 import { useState } from "react";
 import Link from "next/link";
@@ -8,6 +8,7 @@ export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
+    // Header principal: bg-white/90 backdrop-blur-md
     <header className="fixed top-0 left-0 right-0 z-50 w-full bg-white/90 backdrop-blur-md border-b border-gray-100 transition-all duration-300">
       <div className="mx-auto max-w-7xl px-6">
         <div className="flex h-20 items-center justify-between">
@@ -17,7 +18,7 @@ export default function Header() {
             <Logo />
           </div>
 
-          {/* --- NAVEGACIÓN DE ESCRITORIO (Hidden en Mobile) --- */}
+          {/* --- NAVEGACIÓN DE ESCRITORIO --- */}
           <nav className="hidden md:flex items-center gap-10">
             <Link
               href="#services"
@@ -39,7 +40,7 @@ export default function Header() {
             </Link>
           </nav>
 
-          {/* --- BOTÓN HAMBURGUESA (Visible solo en Mobile) --- */}
+          {/* --- BOTÓN HAMBURGUESA --- */}
           <div className="md:hidden flex items-center">
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -53,7 +54,6 @@ export default function Header() {
                 stroke="currentColor"
               >
                 {isMobileMenuOpen ? (
-                  // Ícono de "Cerrar" (X)
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
@@ -61,7 +61,6 @@ export default function Header() {
                     d="M6 18L18 6M6 6l12 12"
                   />
                 ) : (
-                  // Ícono de "Hamburguesa" (Tres líneas)
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
@@ -75,14 +74,18 @@ export default function Header() {
         </div>
       </div>
 
-      {/* --- MENÚ DESPLEGABLE MÓVIL (Acordeón) --- */}
-      {/* Se renderiza condicionalmente si isMobileMenuOpen es true */}
+      {/* --- MENÚ DESPLEGABLE MÓVIL --- */}
       {isMobileMenuOpen && (
-        <div className="md:hidden bg-white/95 backdrop-blur-xl border-b border-gray-100 shadow-xl animate-in slide-in-from-top-5 duration-200">
+        <div 
+          // CAMBIO AQUÍ: Igualé las clases al Header principal
+          // Antes: bg-white/95 backdrop-blur-xl
+          // Ahora: bg-white/90 backdrop-blur-md (Idéntico al header para continuidad de color)
+          className="md:hidden bg-white/90 backdrop-blur-md border-b border-gray-100 shadow-xl animate-in slide-in-from-top-5 duration-200"
+        >
           <nav className="flex flex-col px-6 py-4 space-y-4">
             <Link
               href="#services"
-              onClick={() => setIsMobileMenuOpen(false)} // Cierra el menú al hacer clic
+              onClick={() => setIsMobileMenuOpen(false)}
               className="text-base font-semibold text-gray-700 hover:text-[#ff914d] py-2 border-b border-gray-50"
             >
               Servicios
