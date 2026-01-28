@@ -8,8 +8,7 @@ export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    // Header principal: bg-white/90 backdrop-blur-md
-    <header className="fixed top-0 left-0 right-0 z-50 w-full bg-white/90 backdrop-blur-md border-b border-gray-100 transition-all duration-300">
+    <header className="fixed top-0 left-0 right-0 z-50 w-full bg-white border-b border-gray-200 shadow-sm transition-all duration-300">
       <div className="mx-auto max-w-7xl px-6">
         <div className="flex h-20 items-center justify-between">
           
@@ -22,13 +21,13 @@ export default function Header() {
           <nav className="hidden md:flex items-center gap-10">
             <Link
               href="#services"
-              className="text-sm font-semibold tracking-tight text-gray-600 hover:text-[#ff914d] transition-colors duration-200"
+              className="text-sm font-semibold tracking-tight text-gray-700 hover:text-[#ff914d] transition-colors duration-200"
             >
               Servicios
             </Link>
             <Link
               href="#about"
-              className="text-sm font-semibold tracking-tight text-gray-600 hover:text-[#ff914d] transition-colors duration-200"
+              className="text-sm font-semibold tracking-tight text-gray-700 hover:text-[#ff914d] transition-colors duration-200"
             >
               Nosotros
             </Link>
@@ -44,7 +43,7 @@ export default function Header() {
           <div className="md:hidden flex items-center">
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="text-gray-600 hover:text-[#ff914d] focus:outline-none p-2"
+              className="text-gray-700 hover:text-[#ff914d] focus:outline-none p-2"
               aria-label="Abrir menú"
             >
               <svg
@@ -76,24 +75,19 @@ export default function Header() {
 
       {/* --- MENÚ DESPLEGABLE MÓVIL --- */}
       {isMobileMenuOpen && (
-        <div 
-          // CAMBIO AQUÍ: Igualé las clases al Header principal
-          // Antes: bg-white/95 backdrop-blur-xl
-          // Ahora: bg-white/90 backdrop-blur-md (Idéntico al header para continuidad de color)
-          className="md:hidden bg-white/90 backdrop-blur-md border-b border-gray-100 shadow-xl animate-in slide-in-from-top-5 duration-200"
-        >
+        <div className="md:hidden bg-white border-b border-gray-200 shadow-lg">
           <nav className="flex flex-col px-6 py-4 space-y-4">
             <Link
               href="#services"
               onClick={() => setIsMobileMenuOpen(false)}
-              className="text-base font-semibold text-gray-700 hover:text-[#ff914d] py-2 border-b border-gray-50"
+              className="text-base font-semibold text-gray-700 hover:text-[#ff914d] py-2 border-b border-gray-200"
             >
               Servicios
             </Link>
             <Link
               href="#about"
               onClick={() => setIsMobileMenuOpen(false)}
-              className="text-base font-semibold text-gray-700 hover:text-[#ff914d] py-2 border-b border-gray-50"
+              className="text-base font-semibold text-gray-700 hover:text-[#ff914d] py-2 border-b border-gray-200"
             >
               Nosotros
             </Link>
